@@ -35,7 +35,7 @@
 
 ```
 ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-│  💥 Explosive│  │ 🔥 Flammable│  │ ☢️ Radioactive│
+│ 💥 Explosive│  │ 🔥 Flammable│  │ ☢️ Radioactive│
 │    ID: 1    │  │   ID: 2     │  │   ID: 11    │
 └─────────────┘  └─────────────┘  └─────────────┘
 ```
@@ -161,13 +161,13 @@ ros2 launch snc_team hazard_detector.launch.py \
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│                   hazard_detector.launch.py                       │
-│                                                                    │
+│                   hazard_detector.launch.py                      │
+│                                                                  │
 │  ┌──────────────────┐   ┌──────────────────┐   ┌──────────────┐  │
 │  │ best_effort_     │   │  find_object_2d  │   │  hazard_     │  │
 │  │ repeater         │   │                  │   │  detector    │  │
-│  │                  │   │  จำรูปป้าย        │   │  ← โค้ดเรา  │  │
-│  │  แปลง QoS        │   │  ป้าย 13 ประเภท  │   │              │  │
+│  │                  │   │  จำรูปป้าย          │   │  ← โค้ดเรา     │  │  
+│  │  แปลง QoS        │   │  ป้าย 13 ประเภท    │   │              │  │
 │  │  BestEffort      │──→│                  │──→│              │  │
 │  │  → Reliable      │   │                  │   │              │  │
 │  └────────▲─────────┘   └──────────────────┘   └──────┬───────┘  │
@@ -183,7 +183,7 @@ ros2 launch snc_team hazard_detector.launch.py \
 
 ```
                     ┌─────────────────┐
-                    │   เริ่มต้น Node  │
+                    │   เริ่มต้น Node     │
                     │  (subscribe     │
                     │  /objects +     │
                     │   /scan)        │
@@ -194,7 +194,7 @@ ros2 launch snc_team hazard_detector.launch.py \
     ┌────────▼────────┐             ┌────────▼────────┐
     │  laser_callback │             │objects_callback  │
     │                 │             │                  │
-    │  บันทึกค่า      │             │  รับ object_id   │
+    │  บันทึกค่า         │             │  รับ object_id    │
     │  ranges[]       │             │  + bbox_center_x │
     │  angle_min      │             │                  │
     │  angle_increment│             └────────┬────────┘
@@ -205,16 +205,16 @@ ros2 launch snc_team hazard_detector.launch.py \
                                    └───┬───────────┬───┘
                                  ไม่ใช่  │           │   ใช่
                                        ▼           ▼
-                                     ข้าม   ┌──────────────┐
-                                            │ คำนวณมุม     │
+                                     ข้าม    ┌──────────────┐
+                                            │ คำนวณมุม      │
                                             │ จาก pixel    │
                                             │ → radian     │
                                             └──────┬───────┘
                                                    │
                                             ┌──────▼───────┐
-                                            │  อ่าน Laser  │
-                                            │  ระยะตามมุม  │
-                                            │  นั้น (dist) │
+                                            │  อ่าน Laser   │
+                                            │  ระยะตามมุม    │
+                                            │  นั้น (dist)   │
                                             └──────┬───────┘
                                                    │
                                       inf/nan? ────┤
@@ -232,7 +232,7 @@ ros2 launch snc_team hazard_detector.launch.py \
                                             │  → map frame │
                                             └──────┬───────┘
                                                    │
-                                       ล้มเหลว? ───┤
+                                         ล้มเหลว? ───┤
                                            ▲       │ สำเร็จ
                                           warn      ▼
                                             ┌──────────────┐
@@ -250,11 +250,11 @@ ros2 launch snc_team hazard_detector.launch.py \
                                             │   (< 0.5m?)  │
                                             └──────┬───────┘
                                                    │
-                                          ซ้ำ? ────┤
+                                          ซ้ำ?  ────┤
                                            ▲       │ ไม่ซ้ำ
                                           ข้าม     ▼
                                             ┌──────────────┐
-                                            │   บันทึก +   │
+                                            │   บันทึก +     │
                                             │   publish    │
                                             │  /hazards    │
                                             │  /snc_status │
@@ -265,9 +265,9 @@ ros2 launch snc_team hazard_detector.launch.py \
                               ▼
                     ┌─────────────────┐
                     │  republish      │
-                    │  ทุก hazard     │
-                    │  ที่ confirm    │
-                    │  แล้ว          │
+                    │  ทุก hazard      │
+                    │  ที่ confirm      │
+                    │  แล้ว            │
                     └─────────────────┘
 ```
 
@@ -350,7 +350,7 @@ find_object_2d โหลดรูปป้ายจาก objects_path/
     ▼  ถ้าเจอ → publish /objects
        data = [object_id, img_w, img_h, h0..h8, ...]
                ───┬────   ──┬──               ──┬──
-                  │          │                   │
+                  │         │                   │
                ID ป้าย   ขนาดภาพ            Homography
                (1-13)                        matrix
 ```
