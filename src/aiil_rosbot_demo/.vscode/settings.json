@@ -1,0 +1,26 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/home/ter/fastwork/robot_ws/build/snc_team",
+    "/home/ter/fastwork/robot_ws/install/snc_team/lib/python3.10/site-packages",
+    "/home/ter/fastwork/robot_ws/build/par_template",
+    "/home/ter/fastwork/robot_ws/install/par_template/lib/python3.10/site-packages",
+    "/home/ter/fastwork/robot_ws/build/aiil_rosbot_demo",
+    "/home/ter/fastwork/robot_ws/install/aiil_rosbot_demo/lib/python3.10/site-packages",
+    "/home/ter/fastwork/par_coursework/install/snc_team/lib/python3.10/site-packages",
+    "/home/ter/fastwork/par_coursework/install/par_template/lib/python3.10/site-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/home/ter/fastwork/robot_ws/build/snc_team",
+    "/home/ter/fastwork/robot_ws/install/snc_team/lib/python3.10/site-packages",
+    "/home/ter/fastwork/robot_ws/build/par_template",
+    "/home/ter/fastwork/robot_ws/install/par_template/lib/python3.10/site-packages",
+    "/home/ter/fastwork/robot_ws/build/aiil_rosbot_demo",
+    "/home/ter/fastwork/robot_ws/install/aiil_rosbot_demo/lib/python3.10/site-packages",
+    "/home/ter/fastwork/par_coursework/install/snc_team/lib/python3.10/site-packages",
+    "/home/ter/fastwork/par_coursework/install/par_template/lib/python3.10/site-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ]
+}
